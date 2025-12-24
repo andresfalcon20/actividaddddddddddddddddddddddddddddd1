@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "753367395440",
+    "firebase_url": "https://actividadcontacto-fa63d-default-rtdb.firebaseio.com",
+    "project_id": "actividadcontacto-fa63d",
+    "storage_bucket": "actividadcontacto-fa63d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753367395440:android:29a614c3f6eac1e62b18b5",
+        "android_client_info": {
+          "package_name": "com.example.actividad1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMenuEXtkv2ugAr1hJTYifePz_0LJkXsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
