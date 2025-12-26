@@ -22,11 +22,10 @@ Widget formulario(context) {
   TextEditingController contrasena = TextEditingController();
 
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 30.0), // Espacio a los lados
+    padding: const EdgeInsets.symmetric(horizontal: 30.0), 
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Título visual (opcional, ayuda al diseño)
         const Text(
           "Bienvenido",
           style: TextStyle(
@@ -35,9 +34,8 @@ Widget formulario(context) {
             color: Colors.blueAccent
           ),
         ),
-        const SizedBox(height: 30), // Separación
+        const SizedBox(height: 30), 
 
-        // Input Correo
         TextField(
           controller: correo,
           decoration: InputDecoration(
@@ -49,12 +47,11 @@ Widget formulario(context) {
           ),
         ),
         
-        const SizedBox(height: 20), // Separación entre inputs
+        const SizedBox(height: 20), 
 
-        // Input Contraseña
         TextField(
           controller: contrasena,
-          obscureText: true, // Oculta el texto visualmente (puntos)
+          obscureText: true, 
           decoration: InputDecoration(
             labelText: 'Ingresar Contraseña',
             prefixIcon: const Icon(Icons.lock_outline),
@@ -64,11 +61,10 @@ Widget formulario(context) {
           ),
         ),
 
-        const SizedBox(height: 30), // Separación botón
+        const SizedBox(height: 30), 
 
-        // Botón Estilizado
         SizedBox(
-          width: double.infinity, // Ocupa todo el ancho disponible
+          width: double.infinity, 
           height: 50,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -90,7 +86,6 @@ Widget formulario(context) {
   );
 }
 
-// Lógica intacta
 Future<void> login(correo, contrasena, context) async {
   try {
     final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
