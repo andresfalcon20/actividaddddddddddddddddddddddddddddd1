@@ -60,7 +60,7 @@ class Cuerpo extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
 
-              const SizedBox(height: 50), // Separación
+              const SizedBox(height: 50), 
               SizedBox(
                 width: double.infinity,
                 height: 50,
