@@ -6,11 +6,10 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Agregamos un color de fondo suave al Scaffold
     return Scaffold(
       backgroundColor: Colors.grey[100], 
-      body: Center( // Centra el formulario en la pantalla
-        child: SingleChildScrollView( // Evita error de overflow si el teclado sube
+      body: Center(
+        child: SingleChildScrollView( 
           child: formulario(context),
         ),
       ),
