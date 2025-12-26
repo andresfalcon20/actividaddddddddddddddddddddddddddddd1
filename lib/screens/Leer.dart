@@ -10,7 +10,6 @@ class Leerscreen extends StatefulWidget {
 
 class _LeerscreenState extends State<Leerscreen> {
 
-  // 1. LEER FIREBASE
   Future<List> leerFire() async {
     List gastos = [];
     DatabaseReference ref = FirebaseDatabase.instance.ref('gastos/');
@@ -32,16 +31,14 @@ class _LeerscreenState extends State<Leerscreen> {
     return gastos;
   }
 
-  // 2. ELIMINAR
   Future<void> eliminar(String id) async {
     DatabaseReference ref =
         FirebaseDatabase.instance.ref("gastos/$id");
     await ref.remove();
 
-    setState(() {}); // 🔥 refresca la lista
+    setState(() {}); 
   }
 
-  // 3. EDITAR
   void editar(BuildContext context, Map item) {
     TextEditingController titulo =
         TextEditingController(text: item["titulo"]);
@@ -90,7 +87,7 @@ class _LeerscreenState extends State<Leerscreen> {
               });
 
               Navigator.pop(context);
-              setState(() {}); // 🔥 refresca
+              setState(() {}); 
             },
           ),
         ],
@@ -98,7 +95,6 @@ class _LeerscreenState extends State<Leerscreen> {
     );
   }
 
-  // 4. UI
   @override
   Widget build(BuildContext context) {
     return Scaffold(
