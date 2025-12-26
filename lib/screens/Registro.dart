@@ -18,7 +18,6 @@ class Registro extends StatelessWidget {
 }
 
 Widget formulario(context) {
-  // 1. Agregamos el controlador para el nombre (solo visual)
   TextEditingController nombre = TextEditingController();
   TextEditingController correo = TextEditingController();
   TextEditingController contrasena = TextEditingController();
@@ -38,12 +37,11 @@ Widget formulario(context) {
         ),
         const SizedBox(height: 30),
 
-        // --- NUEVO CAMPO: NOMBRE ---
         TextField(
           controller: nombre,
           decoration: InputDecoration(
-            labelText: 'Ingresar Nombre', // Etiqueta visual
-            prefixIcon: const Icon(Icons.person), // Icono de persona
+            labelText: 'Ingresar Nombre', 
+            prefixIcon: const Icon(Icons.person), 
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
             filled: true,
             fillColor: Colors.white,
@@ -52,7 +50,6 @@ Widget formulario(context) {
         
         const SizedBox(height: 20),
 
-        // Input Correo
         TextField(
           controller: correo,
           decoration: InputDecoration(
@@ -66,7 +63,6 @@ Widget formulario(context) {
         
         const SizedBox(height: 20),
 
-        // Input Contraseña
         TextField(
           controller: contrasena,
           obscureText: true,
@@ -81,7 +77,6 @@ Widget formulario(context) {
 
         const SizedBox(height: 30),
 
-        // Botón Registrarse
         SizedBox(
           width: double.infinity,
           height: 50,
@@ -93,7 +88,6 @@ Widget formulario(context) {
               ),
               elevation: 5,
             ),
-            // Solo enviamos correo y contraseña a la lógica, el nombre se ignora al guardar
             onPressed: () => login(correo.text, contrasena.text, context),
             child: const Text(
               'Registrarse', 
@@ -106,7 +100,6 @@ Widget formulario(context) {
   );
 }
 
-// Lógica intacta (Solo guarda correo y contraseña)
 Future<void> login(correo, contrasena, context) async {
   try {
     final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
