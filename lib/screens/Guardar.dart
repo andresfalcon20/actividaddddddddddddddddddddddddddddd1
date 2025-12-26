@@ -38,7 +38,6 @@ Widget formulario(context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // --- CAMPO ID (Manual) ---
         TextField(
           controller: id,
           keyboardType: TextInputType.number,
@@ -52,7 +51,6 @@ Widget formulario(context) {
         ),
         const SizedBox(height: 20),
 
-        // --- CAMPO TITULO ---
         TextField(
           controller: titulo,
           decoration: InputDecoration(
@@ -65,7 +63,6 @@ Widget formulario(context) {
         ),
         const SizedBox(height: 20),
 
-        // --- CAMPO DETALLE ---
         TextField(
           controller: detalle,
           decoration: InputDecoration(
@@ -78,7 +75,6 @@ Widget formulario(context) {
         ),
         const SizedBox(height: 20),
 
-        // --- CAMPO PRECIO ---
         TextField(
           controller: precio,
           keyboardType: TextInputType.number,
@@ -93,7 +89,6 @@ Widget formulario(context) {
 
         const SizedBox(height: 30),
 
-        // BOTÓN
         SizedBox(
           width: double.infinity,
           height: 50,
@@ -105,7 +100,6 @@ Widget formulario(context) {
               ),
               elevation: 5,
             ),
-            // Llamamos a la función
             onPressed: () => guardar(id.text, titulo.text, detalle.text, precio.text, context),
             child: const Text(
               'Guardar Gasto',
@@ -114,7 +108,6 @@ Widget formulario(context) {
           ),
         ),
         
-        // Botón para ir a ver la lista (Opcional)
         const SizedBox(height: 20),
         TextButton(
           onPressed: () => Navigator.pushNamed(context, '/leer'), 
@@ -134,13 +127,11 @@ Widget formulario(context) {
 
 Future<void> guardar(String id, String titulo, String detalle, String precio, context) async {
   
-  // Si falta algo, solo imprimimos en consola y no hacemos nada
   if (id.isEmpty || titulo.isEmpty || precio.isEmpty) {
       print("Faltan llenar campos"); 
       return;
   }
 
-  // Referencia simple usando el ID manual
   DatabaseReference ref = FirebaseDatabase.instance.ref("gastos/$id");
 
   await ref.set({
